@@ -1,3 +1,7 @@
+.custom-bg-color {
+    background: linear-gradient(to bottom, #c6fcff, #005f6b);
+  }
+
 .form-input:focus,
 .form-textarea:focus,
 .form-multiselect:focus,

@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import MobileMenu from './mobile-menu'
+import Dropdown from '@/components/utils/dropdown'
 import Image from 'next/image'
 import Logo from '@/public/images/logo.png'
 
@@ -20,24 +21,35 @@ export default function Header() {
           </div>
 
           {/* Desktop navigation */}
-          {/* <nav className="hidden md:flex md:grow"> */}
+          <nav className="hidden md:flex md:grow">
             {/* Desktop sign in links */}
-            {/* <ul className="flex grow justify-end flex-wrap items-center">
+            <ul className="flex grow justify-end flex-wrap items-center">
               <li>
-                <Link
-                  href="/signin"
-                  className="font-medium text-blue-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out"
-                >
-                  Sign in
+                <Link href="/about" className="text-gray-800 hover:text-gray-800 px-4 py-2 flex items-center transition duration-150 ease-in-out">
+                  About us
                 </Link>
               </li>
-              <li>
-                <Link href="/signup" className="btn-sm text-white bg-blue-600 hover:bg-blue-700 ml-3">
-                  Sign up
-                </Link>
-              </li>
+              {/* 1st level: hover */}
+              <Dropdown title="Support">
+                {/* 2nd level: hover */}
+                <li>
+                  <Link href="/contact" className="font-medium text-sm text-gray-400 hover:text-purple-600 flex py-2 px-4 leading-tight">
+                    Contact us
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/help/frequently-asked-questions" className="font-medium text-sm text-gray-400 hover:text-purple-600 flex py-2 px-4 leading-tight">
+                    Help center
+                  </Link>
+                </li>
+                {/* <li>
+                  <Link href="/404" className="font-medium text-sm text-gray-400 hover:text-purple-600 flex py-2 px-4 leading-tight">
+                    404
+                  </Link>
+                </li> */}
+              </Dropdown>
             </ul>
-          </nav> */}
+          </nav>
 
           <MobileMenu />
 
